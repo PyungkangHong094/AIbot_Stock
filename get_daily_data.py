@@ -2,6 +2,9 @@ import sys
 from PyQt5.QtWidgets import *
 import openapi
 
+# 이해를 구지 안해두된다
+# 이 파일은
+# 오픈에이파이로부터 주가데이터를 가져오게하는 프로그램을 짜놓은것이다
 
 class get_daily_data():
     def __init__(self):
