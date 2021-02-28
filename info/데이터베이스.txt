@@ -1,0 +1,76 @@
+-- * database ? => 엑셀에서 파일 이름  하나의 파일이라고 생각하면 도니다
+
+
+-- * table ? => 엑셀에서 sheet 
+-- * column ? => 엑셀에서 열 이름(A,B,C ...)
+-- * 자료형 ? => 저장 할 데이터의 종류 
+--     # int? => 숫자 저장을 위한 자료형
+--     # varchar? => 문자열 저장을 위한 자료형
+-- * query ? => 데이터 베이스에 요청 하는 명령어  
+-- * CRUD ? => : Create(생성), Read(읽기), Update(갱신), Delete(삭제)를 묶어서 일컫는 말
+-- * work bench 명령어 
+--     # 아래 명령어 한 줄씩 실행 하는 방법 => ctrl + enter 
+--     # 주석 명령어 => crtl + / 
+
+
+-- 1. create : database 생성 명령어 
+--    세미콜론 : ";" 문장의 마침표  
+
+create database bot_test1;
+
+
+
+create database bot_test2;
+
+
+
+-- 2. drop : database 삭제 명령어
+drop database bot_test2;
+
+
+
+
+-- 3. select : table 읽기 명령어
+--   * 아래 명령의 의미는 bot_test 라는 데이터 베이스 안에 있는 class1 이라는 테이블의 모든 정보를 보여줘 
+select * from bot_test1.class1;
+
+
+
+--   *  bot_test 라는 데이터 베이스 안에 있는 class1 이라는 테이블의 name 정보를 보여줘 
+select name from bot_test1.class1;
+
+
+
+--   *  bot_test 라는 데이터 베이스 안에 있는 class1 이라는 테이블의 name, age 정보를 보여줘 
+select name, age from bot_test1.class1;
+
+
+
+--   * bot_test 라는 데이터 베이스 안에 있는 class1 이라는 테이블에서 나이가 10살이 넘는(초과) 학생들의 모든 정보를 보여줘 
+
+select * from bot_test1.class1 where age > 10;
+
+
+--   * bot_test 라는 데이터 베이스 안에 있는 class1 이라는 테이블에서 나이가 10살 이상인 학생들의 모든 정보를 보여줘 
+
+select * from bot_test1.class1 where age >= 10;
+
+
+
+
+
+-- 4. update : table 수정 
+
+
+
+update bot_test1.class1 set age = 12 where number = 1;
+
+
+select * from bot_test1.class1 ;
+
+-- 5. delete : table 에서 특정 행 삭제
+delete from bot_test1.class1 where number = 1;
+
+
+
+
