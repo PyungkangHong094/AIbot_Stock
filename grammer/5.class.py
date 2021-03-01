@@ -22,6 +22,10 @@ price3 = 165500
 rate3 = 3
 print(f"stock_name: {stock_name3}, price: {price3}, rate: {rate3}")
 
+# 생각을 해보세요
+# 무언가를 또 사면 저렇게 계속 써야한다
+# 정말 비효율적이다
+# 그래서 클래스라는걸 쓰는거다
 
 
 print("\n*************************************ex2*************************************")
@@ -77,6 +81,8 @@ class Stock2:  # Stock2 이라는 이름을 가진 클래스를 정의
 
 # item1, item2, item3은 객체 (=Stock2이라는 클래스의 인스턴스)
 item1 = Stock2('삼성전자', 60900, 3.5)
+# item -> slef | 삼성전가 -> stock name ...
+# 왜 보내느냐 누군지 알아야하니까 self 로 되는거다
 
 # id() 내장 함수는 객체를 입력값으로 받아서 객체의 고유값(일련번호)을 반환하는 함수
 # 출력 결과 self의 일련번호와 동일
@@ -226,3 +232,35 @@ t.print()
 print(f"t.item.x : {t.item.x}, t.item.y : {t.item.y}")
 
 
+class Stock4:
+    def __init__(self, name, close, hight, low ):
+        self.name = name
+        self.close = close
+        self.hight = hight
+        self.low = low
+
+    def print(self):
+        print(f"stock name: {self.name}, close price: {self.close}, hight price:{self.hight}, low price: {self.low}")
+
+class Calculator2:
+    def __init__(self, close, hight, low):
+        self.close = close
+        self.hight = hight
+        self.low = low
+
+    def aaverage(self):
+        return (self.close + self.hight + self.low) / 3
+
+
+
+item1 = Stock4('samsung', 67799, 68500,67000)
+item2 = Stock4('SK', 67799, 68500,67000)
+avg = Calculator2(item1.close, item1.hight, item1.low)
+
+typical_price1 = avg.aaverage()
+print(f"{item1.name} Typical Price:{typical_price1}")
+
+avg2 = Calculator2(item2.close, item2.hight, item2.low)
+typical_price2 = avg2.aaverage()
+
+print(f"{item2.name} Typical Price:{typical_price2}")
