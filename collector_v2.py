@@ -1,4 +1,5 @@
 # 이 코드가 완벽히 이해가 된다면 봇 개발 절반은 성공.
+# 정말 이해가 안되는 부분들이 많음
 print("collector 프로그램이 시작 되었습니다!")
 # crtl + alt + 좌우방향키 : 이전 커서 위치로
 
@@ -10,11 +11,12 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 
-
+## 콜렉터 1이랑 콜렉터 2는 Openapi, getitem 이 연결되어있다는 점이다.
 # -> openapi.py 라는 소스파일에 있는 Openapi 클래스만 가져와서 사용하고 싶은 경우. -> openapi에 import 된 라이브러리를 사용하고 싶지 않다!
 # from openapi import Openapi
+
 # openapi.py 라는 소스파일에 있는 모든 함수, 라이브러리, 클래스 등을 가져오고 싶을 경우 아래처럼!
-from openapi import *
+from openapi import * #별은 모든 함수를 가져온다는 뜻
 
 # get_item : 종목 리스트 가져오는 모듈
 from get_item import StockItem
