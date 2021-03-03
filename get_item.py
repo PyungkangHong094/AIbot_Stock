@@ -12,6 +12,7 @@ class StockItem():
     # 코스피 종목 리스트를 가져오는 메서드
     def get_item_kospi(self):
         print("get_item_kospi!!")
+        # html 파일을 읽어오는곳
         self.code_df_kospi = \
         pd.read_html('http://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13&marketType=stockMkt',
                      header=0)[
@@ -48,6 +49,7 @@ class StockItem():
 
 
 if __name__ == "__main__":
+    #스톡 아이템은
     s = StockItem()
     print("코스피 종목 수: ", len(s.code_df_kospi))
     print(s.code_df_kospi)
